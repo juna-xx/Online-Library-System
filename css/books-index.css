@@ -1,0 +1,107 @@
+/* Featured Books Section in index.php */
+.featured {
+    max-width: 1400px;
+    margin: 5rem auto;
+    padding: 0 2rem;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    color: #6b46c1;
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #8b5fbf;
+}
+
+.books-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+}
+
+.book-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(147, 112, 219, 0.15);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.book-card:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(147, 112, 219, 0.3);
+    border-color: #9370db;
+}
+
+.book-cover {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    background: linear-gradient(135deg, #f5e6ff, #ffe6f0);
+    transition: transform 0.4s;
+}
+
+.book-card:hover .book-cover {
+    transform: scale(1.05);
+}
+
+.book-info {
+    padding: 1.8rem;
+}
+
+.book-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #6b46c1;
+    margin-bottom: 0.7rem;
+    line-height: 1.4;
+}
+
+.book-author {
+    color: #8b5fbf;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.book-year {
+    color: #999;
+    font-size: 0.95rem;
+}
+
+.book-genres {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.genre-tag {
+    background: linear-gradient(135deg, rgba(147, 112, 219, 0.1), rgba(255, 105, 180, 0.1));
+    color: #6b46c1;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(147, 112, 219, 0.2);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .books-grid {
+        grid-template-columns: 1fr;
+    }
+}

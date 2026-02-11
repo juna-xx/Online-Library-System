@@ -1,0 +1,233 @@
+* { margin:0; 
+    padding:0; 
+	box-sizing:border-box; }
+
+/*  Body */
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height:100vh;
+    background: linear-gradient(135deg,#f3e8ff 0%, #ede2ff 50%, #f8f1ff 100%);
+    display:flex;
+    flex-direction:column;
+}
+
+/* Header */
+header {
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 2px solid rgba(124, 58, 237, 0.2);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(147, 112, 219, 0.15);
+}
+
+nav {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items:left-side;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 18px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.logo-text {
+    font-size: 1.4rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/*Nav Links*/
+.nav-links {
+    display:flex;
+    gap:2rem;
+    margin-left:auto;
+    list-style:none;
+}
+
+.nav-links a {
+    text-decoration:none;
+    color:#6b46c1;
+    font-weight:600;
+    font-size:1.05rem;
+    position:relative;
+}
+
+.nav-links a::after {
+    content:'';
+    position:absolute;
+    bottom:-5px;
+    left:0;
+    width:0;
+    height:2px;
+    background:linear-gradient(135deg,#9370db,#ff69b4);
+    transition:0.3s;
+}
+
+.nav-links a:hover::after {
+    width:100%;
+}
+
+.nav-links a:hover {
+    color:#ff69b4;
+}
+
+/*  User Info */
+.user-info {
+    display:flex;
+    align-items:center;
+    gap:1rem;
+    margin-left:2rem;
+}
+
+.user-name {
+    color:#6b46c1;
+    font-weight:700;
+}
+
+/* Buttons  */
+.btn {
+    padding:0.7rem 1.8rem;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:700;
+    transition:0.3s;
+    border:none;
+    cursor:pointer;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.btn-secondary {
+    background: rgba(147,112,237,0.15);
+    color:#6b46c1;
+}
+
+.btn-secondary:hover {
+    background: rgba(147,112,219,0.25);
+}
+
+/*  Main  */
+main {
+    flex:1;
+}
+
+/*  Dashboard  */
+.dashboard {
+    max-width:1400px;
+    margin:5rem auto;
+    padding:0 2rem;
+}
+
+.dashboard-header {
+    text-align:center;
+    margin-bottom:3rem;
+}
+
+.dashboard-header h2 {
+    font-size:2.8rem;
+    color:#6b46c1;
+    font-weight:800;
+}
+
+.dashboard-header p {
+    font-size:1.2rem;
+    color:#8b5fbf;
+}
+
+/*  Stats  */
+.stats {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:2.5rem;
+    margin-bottom:4rem;
+}
+
+.stat-card {
+    background:white;
+    padding:2.5rem;
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(147,112,219,0.15);
+    border:2px solid transparent;
+    text-align:center;
+    transition:0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-8px);
+    border-color:#9370db;
+}
+
+.stat-number {
+    font-size:3.5rem;
+    font-weight:900;
+    background: linear-gradient(135deg,#9370db,#ff69b4);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.stat-label {
+    color:#6b46c1;
+    font-size:1.2rem;
+    font-weight:600;
+}
+
+/*  Admin Actions  */
+.admin-actions {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:2.5rem;
+}
+
+.action-card {
+    background:white;
+    padding:2.2rem;
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(147,112,219,0.15);
+    border:2px solid transparent;
+    cursor:pointer;
+    transition:0.35s;
+    font-weight:700;
+    color:#6b46c1;
+    text-align:center;
+}
+
+.action-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    border-color:#9370db;
+    box-shadow:0 20px 40px rgba(147,112,219,0.3);
+}
+
+/*  Footer  */
+footer {
+    background: rgba(255,255,255,0.9);
+    border-top:2px solid rgba(147,112,219,0.2);
+    padding:1rem 0;
+    text-align:center;
+	margin-top: 2rem;
+}
+
+footer p {
+    color:#6b46c1;
+}
+
+/*  Responsive  */
+@media(max-width:768px) {
+    .nav-links { display:none; }
+    .stats, .admin-actions { grid-template-columns:1fr; }
+}

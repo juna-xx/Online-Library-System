@@ -1,0 +1,363 @@
+:root {
+    --primary: #9d4edd;
+    --primary-gradient: linear-gradient(135deg, #9d4edd, #5a9bd4);
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #cdb4ff, #bde0fe);
+    min-height: 100vh;
+    color: #333;
+}
+
+/* Main Container */
+.container {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+/* Shared Card Styling */
+.book-details,
+.reviews-section {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* Book Details Section */
+.book-details {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+}
+
+.book-cover-section {
+    text-align: center;
+}
+
+.book-cover {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    margin-bottom: 1rem;
+}
+
+.author-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.author-link:hover {
+    text-decoration: underline;
+}
+
+.book-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.book-title {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.book-meta {
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.book-meta span {
+    margin-right: 1rem;
+}
+
+.genres {
+    margin-bottom: 1rem;
+}
+
+.genre-tag {
+    display: inline-block;
+    background: var(--primary-gradient);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.book-description {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+/* Status Button */
+.status-section {
+    position: relative;
+    margin-top: auto;
+}
+
+.set-status-btn {
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: transform 0.2s;
+}
+
+.set-status-btn:hover {
+    transform: translateY(-2px);
+}
+
+.status-dropdown {
+    display: none;
+    position: absolute;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    padding: 1rem;
+    z-index: 10;
+    margin-top: 0.5rem;
+    min-width: 200px;
+}
+
+.status-dropdown.active {
+    display: block;
+}
+
+.status-option {
+    padding: 0.8rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.2s;
+}
+
+.status-option:hover {
+    background: #f0f0f0;
+}
+
+/* Date Form Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    max-width: 400px;
+    width: 90%;
+}
+
+.modal-content h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.submit-btn {
+    flex: 1;
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: transform 0.2s;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+}
+
+.cancel-btn {
+    flex: 1;
+    background: #e0e0e0;
+    color: #555;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s;
+}
+
+.cancel-btn:hover {
+    background: #d0d0d0;
+}
+
+/* Reviews Section */
+.reviews-section h2 {
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+.review-prompt {
+    background: rgba(157, 78, 221, 0.1);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.review-prompt:hover {
+    background: rgba(157, 78, 221, 0.15);
+}
+
+.review-prompt p {
+    color: rgba(0,0,0,0.4);
+    font-style: italic;
+}
+
+.review-item {
+    border-left: 4px solid var(--primary);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: #f9f9f9;
+    border-radius: 5px;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.review-author {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.review-date {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.review-text {
+    line-height: 1.6;
+    color: #555;
+}
+
+.view-more {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.view-more a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.view-more a:hover {
+    text-decoration: underline;
+}
+
+/* Review Form */
+.review-form {
+    display: none;
+    background: white;
+    border: 2px solid var(--primary);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.review-form.active {
+    display: block;
+}
+
+.review-form h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.review-form textarea {
+    min-height: 150px;
+    padding: 1rem;
+    resize: vertical;
+}
+
+/* Success and Error Messages */
+.success-message {
+    background: #4caf50;
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.error-message {
+    background: #f44336;
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .book-details {
+        grid-template-columns: 1fr;
+    }
+
+    .book-title {
+        font-size: 1.8rem;
+    }
+}
+
